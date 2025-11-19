@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metróhálózat Játék</title>
+    <link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="canvas-cell" rowspan="5">
+                <canvas id="gameCanvas"></canvas>
+            </td>
+            
+            <th><p id="player">Játékos 1</p></th>
+            
+            <th colspan="1" id="linePar"></th>
+        </tr>
+        <tr>
+            <td class="data card-timer" rowspan="2">
+                <p id="actualCard">Aktuális kártya:</p>
+                <p id="drawnCard">-</p>
+            </td>
+            
+            <td class="data card-timer">
+                Eltelt idő<br>
+                <span id="timer">00:00</span>
+                <br>
+                <button id="stopBtn" class="running">Megállítás</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="data">
+                <button id="drawCard">Kártya húzása</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="data">
+                <p id="statusBar">Státusz: Várakozás...</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="points" colspan="2">
+    <div class="score-card">
+        <div class="top-section">
+            
+            <div class="round-scores">
+                
+                <div class="icon-col-wrapper">                    
+                    <div class="score-row-label"><div class="icon-box">#</div></div>
+                    <div class="score-row-label"><div class="icon-box">●</div></div>
+                    <div class="score-row-label"><div class="icon-box blue">D</div></div>
+                </div>
+
+                <div class="lines-wrapper">
+                    <div class="score-col">
+                        <div class="score-box" id="m1-pk"></div>
+                        <div class="symbol">x</div>
+                        <div class="score-box" id="m1-pm"></div>
+                        <div class="symbol">+</div>
+                        <div class="score-box" id="m1-pd"></div>
+                        <div class="symbol">=</div>
+                        <div class="score-box total" id="m1-fp"></div>
+                    </div>
+                    
+                    <div class="symbol-col">+</div>
+
+                    <div class="score-col">
+                        <div class="score-box" id="m2-pk"></div>
+                        <div class="symbol">x</div>
+                        <div class="score-box" id="m2-pm"></div>
+                        <div class="symbol">+</div>
+                        <div class="score-box" id="m2-pd"></div>
+                        <div class="symbol">=</div>
+                        <div class="score-box total" id="m2-fp"></div>
+                    </div>
+                    
+                    <div class="symbol-col">+</div>
+
+                    <div class="score-col">
+                        <div class="score-box" id="m3-pk"></div>
+                        <div class="symbol">x</div>
+                        <div class="score-box" id="m3-pm"></div>
+                        <div class="symbol">+</div>
+                        <div class="score-box" id="m3-pd"></div>
+                        <div class="symbol">=</div>
+                        <div class="score-box total" id="m3-fp"></div>
+                    </div>
+                    
+                    <div class="symbol-col">+</div>
+
+                    <div class="score-col">
+                        <div class="score-box" id="m4-pk"></div>
+                        <div class="symbol">x</div>
+                        <div class="score-box" id="m4-pm"></div>
+                        <div class="symbol">+</div>
+                        <div class="score-box" id="m4-pd"></div>
+                        <div class="symbol">=</div>
+                        <div class="score-box total" id="m4-fp"></div>
+                    </div>
+
+                    <div class="symbol-col">=</div>
+                    <div class="lines-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="bonus-scores">
+                <div class="bonus-row">
+                    <div class="icon-small">2</div>
+                    <div class="symbol">x</div>
+                    <div class="score-box" id="p2-count"></div>
+                    <div class="symbol">=</div>
+                    <div class="score-box total" id="p2-score"></div>
+                </div>
+                <div class="bonus-row">
+                    <div class="icon-small">5</div>
+                    <div class="symbol">x</div>
+                    <div class="score-box" id="p3-count"></div>
+                    <div class="symbol">=</div>
+                    <div class="score-box total" id="p3-score"></div>
+                </div>
+                <div class="bonus-row">
+                    <div class="icon-small">9</div>
+                    <div class="symbol">x</div>
+                    <div class="score-box" id="p4-count"></div>
+                    <div class="symbol">=</div>
+                    <div class="score-box total" id="p4-score"></div>
+                </div>
+                <div class="sum-lines">
+                    <div class="score-box total" id="sum-lines-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="train">
+            <div class="train-icon">🚆</div>
+            <div class="train-track" id="trainTrack"></div>
+        </div>
+
+        <div class="bottom-section final-equation">
+            <div class="calc-group">
+                <span class="calc-label">Vonalak</span>
+                <div class="score-box total" id="calc-lines"></div>
+            </div>
+
+            <div class="symbol-final">+</div>
+
+            <div class="calc-group">
+                <span class="calc-label">Vasút</span>
+                <div class="score-box total" id="calc-trains"></div>
+            </div>
+
+            <div class="symbol-final">+</div>
+
+            <div class="calc-group">
+                <span class="calc-label">Csomópont</span>
+                <div class="score-box total" id="calc-bonus"></div>
+            </div>
+
+            <div class="symbol-final">=</div>
+
+            <div class="final-score-box" id="finalTotal"></div>
+        </div>
+    </div>
+</td>
+        </tr>
+    </table>
+
+</body>
+<script src="../js/game.js"></script>
+<script src="../js/canvas.js"></script>
+</html>

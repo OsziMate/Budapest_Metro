@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f4f4f9;
+}
+
+h1, h2, h3 {
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 6px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #5b2c6f; 
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.small-img {
+    max-width: 150px;
+    display: inline-block;
+    margin: 5px;
+}
+
+#Duna{
+    color: rgb(0, 89, 255);
+    font-style: italic;
+}
+
+#M3{
+    color: #005CA5;
+    font-weight:bold;
+}
+
+#buttonDiv{
+    text-align: center;
+}
+
+button{
+    font-size: 1rem;
+    padding: 2% 2%;
+    margin: 1%;
+    max-width: 33%;
+    border-radius: 1.75vh;
+    font-weight: bolder;
+    border: 0.25vh solid #4c0e5f;
+    background-color: #4c0e5f;
+    color: white;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+button:hover{
+    background-color: rgb(252, 252, 252);
+    border: 0.25vh solid #712c83;
+    color: #712c83;
+}

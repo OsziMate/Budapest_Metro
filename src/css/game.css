@@ -1,0 +1,367 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px; /* Alap betűméret */
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+
+table {
+    border-spacing: 1vh;
+    width: 75%;
+    height: 90%;
+    table-layout: fixed;
+    border-collapse: separate;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+th, td {
+    font-size: 2vh;
+}
+
+#canvas-cell {
+    width: 60%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ececec;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background-image: url('../img/Canvas.png');
+    background-repeat: no-repeat;
+    
+
+    background-size: cover; 
+    background-position: center;
+    
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
+
+    border-radius: 10px; 
+}
+
+
+.data {
+    text-align: center;
+    background-color: #ececec;
+    border-radius: 8px;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#actualCard{
+    margin: 5px;
+}
+
+#drawnCard{
+    font-size: 3rem;
+    margin: 5px;
+}
+
+.card-timer{
+    font-size: 1.2rem; 
+    font-weight: bold;
+    padding: 5px;
+}
+
+#statusBar{
+    margin: 0;
+}
+
+.points {
+    background-color: transparent;
+    padding: 0;
+    vertical-align: top;
+    height: 100%;
+}
+
+
+.score-card {
+    background-color: #3e1e5a; 
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+
+.round-scores {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 1rem;
+}
+
+.lines-wrapper {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+.icon-col-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    height: 100%;
+    margin-right: 0.3rem;
+}
+
+.score-row-label {
+    height: 2.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; 
+    width: 2.5rem; 
+}
+
+
+.icon-box {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+.icon-box.blue { color: #89CFF0; font-style: italic; font-family: serif; }
+
+.score-box {
+    width: 2.5rem; 
+    height: 2.5rem;
+    background-color: white;
+    border-radius: 8px;
+    color: #2a1a38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.score-box.total {
+    border: 2px solid rgba(255,255,255,0.6);
+}
+
+.symbol {
+    color: white;
+    font-size: 1rem;
+    height: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.symbol-final{
+    font-size: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.symbol-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 0.8rem;
+}
+
+
+
+.bonus-scores {
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+    gap: 1.25rem;
+    min-width: 100px;
+}
+
+.bonus-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.icon-small {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+
+
+.train{
+    display:flex; 
+    align-items:center;
+    margin-top:10px; 
+    padding-left: 10px;
+}
+
+.train-icon { 
+    font-size: 1.5rem; 
+    margin-right: 0.5rem;
+}
+
+.train-track {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: rgba(255,255,255,0.1);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.track-box {
+    width: 1.5rem; 
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+.track-box.active {
+    background-color: #7aba48;
+    border: 2px solid yellow;
+}
+
+.track-val {
+    font-size: 0.7rem;
+    margin-top: 2px;
+    color: #ccc;
+    text-align: center;
+}
+
+.sum-lines{
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+.bottom-section.final-equation {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.calc-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ccc;
+    font-size: 1rem;
+    min-width: 4rem;
+}
+.calc-label {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.final-equation .symbol {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.final-score-box {
+    min-width: 4.5rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 12px;
+    color: #4c0e5f;
+    font-size: 1.8rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #2a1a38;
+    box-shadow: 0 0 0 3px white;
+    margin-left: 10px;
+}
+
+
+#drawCard { 
+    background-color: #4c0e5f;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#drawCard:disabled { 
+    background-color: #999; 
+    cursor: not-allowed; 
+}
+
+#stopBtn { 
+    color: white;
+    font-weight: bold;
+    width: auto;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.running { 
+    background-color: #4c0e5f; 
+}
+.stopped { 
+    background-color: #d9534f; 
+}

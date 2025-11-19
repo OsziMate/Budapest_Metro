@@ -1,0 +1,76 @@
+html, body{
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main{
+    width: 75%;
+    height: auto;
+    border: 0px;
+    background-color: #ececec;
+    border-radius: 2vh;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+h1{
+    margin-top: 0.67rem;
+    color: #4c0e5f;
+    font-weight: bolder;
+    font-size: 8.5vh;
+    margin-bottom: 0%;
+}
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons button{
+    flex: 1;
+}
+
+button{
+    font-size: 3.5vh;
+    padding: 2% 2%;
+    margin: 1%;
+    max-width: 33%;
+    border-radius: 1.75vh;
+    font-weight: bolder;
+    border: 0.25vh solid #4c0e5f;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+.purplebg{
+    background-color: #4c0e5f;
+    color: white;
+}
+
+.purplebg:hover {
+    background-color: #712c83;
+    border: 0.25vh solid #712c83;
+}
+
+.purpleborder{
+    color: #4c0e5f;
+}
+
+.purpleborder:hover{
+    background-color: rgb(252, 252, 252);
+    border: 0.25vh solid #712c83;
+    color: #712c83;
+}
