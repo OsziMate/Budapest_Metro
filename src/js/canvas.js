@@ -37,7 +37,7 @@ let highlightedPoint = null;
 
 // Pontozás
 let roundScores = {};
-let connectedTrains = new Set();
+let connectedTrains = [];
 let trainScoreIndex = -1;
 const trainPoints = [0, 1, 2, 4, 6, 8, 11, 14, 17, 21, 25];
 
@@ -266,7 +266,7 @@ function addSegment(from, to) {
 // Pontozás
 
 function updateTrainScore(newStation) {
-    if (newStation.train && !connectedTrains.has(newStation.id)) {
+    if (newStation.train) {
         connectedTrains.add(newStation.id);
         trainScoreIndex = Math.min(trainScoreIndex + 1, trainPoints.length - 1);
         updateTrainScoreUI();
