@@ -267,7 +267,7 @@ function addSegment(from, to) {
 
 function updateTrainScore(newStation) {
     if (newStation.train) {
-        connectedTrains.add(newStation.id);
+        connectedTrains.push(newStation.id);
         trainScoreIndex = Math.min(trainScoreIndex + 1, trainPoints.length - 1);
         updateTrainScoreUI();
     }
@@ -426,7 +426,7 @@ drawCardBtn.addEventListener("click", () => {
         return;
     }
 
-    if (drawnCards >= cards.length) {
+    if (drawnCards >= 8) {
         const fp = calculateRoundStats(currentLine);
         roundScores[currentLine] = fp;
         endRound();
